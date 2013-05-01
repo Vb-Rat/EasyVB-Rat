@@ -62,12 +62,12 @@ Partial Class Controll
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ContextMenuStrip3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OpenFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.UploadFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UploadInCurretFolderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenuStrip3 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -460,18 +460,6 @@ Partial Class Controll
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(150, 48)
         '
-        'ContextMenuStrip2
-        '
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UploadFileToolStripMenuItem, Me.UploadInCurretFolderToolStripMenuItem})
-        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(198, 48)
-        '
-        'ContextMenuStrip3
-        '
-        Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
-        Me.ContextMenuStrip3.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip3.Size = New System.Drawing.Size(153, 92)
-        '
         'OpenFolderToolStripMenuItem
         '
         Me.OpenFolderToolStripMenuItem.Image = Global.Host.My.Resources.Resources.download
@@ -485,6 +473,12 @@ Partial Class Controll
         Me.DeleteFileToolStripMenuItem.Name = "DeleteFileToolStripMenuItem"
         Me.DeleteFileToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.DeleteFileToolStripMenuItem.Text = "Delete File"
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UploadFileToolStripMenuItem, Me.UploadInCurretFolderToolStripMenuItem})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(198, 70)
         '
         'UploadFileToolStripMenuItem
         '
@@ -500,18 +494,24 @@ Partial Class Controll
         Me.UploadInCurretFolderToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.UploadInCurretFolderToolStripMenuItem.Text = "Upload in Curret Folder"
         '
+        'ContextMenuStrip3
+        '
+        Me.ContextMenuStrip3.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
+        Me.ContextMenuStrip3.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip3.Size = New System.Drawing.Size(150, 70)
+        '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Image = Global.Host.My.Resources.Resources.download
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 22)
         Me.ToolStripMenuItem1.Text = "Download File"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Image = Global.Host.My.Resources.Resources.edit_delete
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(149, 22)
         Me.ToolStripMenuItem2.Text = "Delete File"
         '
         'ToolStripMenuItem3
@@ -519,21 +519,21 @@ Partial Class Controll
         Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
         Me.ToolStripMenuItem3.Image = Global.Host.My.Resources.Resources.start
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(149, 22)
         Me.ToolStripMenuItem3.Text = "Run File"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Image = Global.Host.My.Resources.Resources._default
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(138, 22)
         Me.ToolStripMenuItem4.Text = "Run Normal"
         '
         'ToolStripMenuItem5
         '
         Me.ToolStripMenuItem5.Image = Global.Host.My.Resources.Resources.images
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(138, 22)
         Me.ToolStripMenuItem5.Text = "Run Hidden"
         '
         'Controll

